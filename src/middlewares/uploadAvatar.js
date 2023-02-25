@@ -1,13 +1,13 @@
-const multer = require("multer");vc/* cambiar la variablede la ruta de la carpeta donde quiero guardar el archivo */
+const multer = require("multer");/* cambiar la variablede la ruta de la carpeta donde quiero guardar el archivo */
 const path = require("path");
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) =>{
+    destination: (req, file, cb) => {
         cb(null, path.join(__dirname, "../../public/images/avatar"))
     },
-    filename: ( req, file, cb => {
+    filename: ( req, file, cb)=> {
             cb(null, `${Date.now()}_avatar_${path.extname(file.originalname)}`)
-    })
+    }
 });
 /* 
 const uploadFile = multer({storage}); */

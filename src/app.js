@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const path = require("path");
-const methodOverride =require("method-override");
+const methodOverride = require("method-override");
 
 app.use(express.static("public"));
 
@@ -12,7 +12,7 @@ app.set("views", "./src/views");
 
 /* Middlewares */
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 
 /* Routers */
